@@ -1,0 +1,14 @@
+C:\_________PERSONAL_________\LearningC#\Project1\bin\Debug\net8.0\Project1.exe
+C:\_________PERSONAL_________\LearningC#\Project1\bin\Debug\net8.0\Project1.deps.json
+C:\_________PERSONAL_________\LearningC#\Project1\bin\Debug\net8.0\Project1.runtimeconfig.json
+C:\_________PERSONAL_________\LearningC#\Project1\bin\Debug\net8.0\Project1.dll
+C:\_________PERSONAL_________\LearningC#\Project1\bin\Debug\net8.0\Project1.pdb
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\Project1.GeneratedMSBuildEditorConfig.editorconfig
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\Project1.AssemblyInfoInputs.cache
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\Project1.AssemblyInfo.cs
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\Project1.csproj.CoreCompileInputs.cache
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\Project1.dll
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\refint\Project1.dll
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\Project1.pdb
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\Project1.genruntimeconfig.cache
+C:\_________PERSONAL_________\LearningC#\Project1\obj\Debug\net8.0\ref\Project1.dll
