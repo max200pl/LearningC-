@@ -273,3 +273,72 @@ foreach (string name in studentNames)
 Console.WriteLine("\n\rPress the Enter key to continue");
 Console.ReadLine();
 
+
+/**  Evaluate Boolean expressions to make decisions in C# */
+
+// Console.WriteLine("a" == "a");
+// Console.WriteLine("a" == "A");
+// Console.WriteLine(1 == 2);
+
+// string myValue = "a";
+// Console.WriteLine(myValue == "a");
+
+// string value1 = " a";
+// string value2 = "A ";
+// Console.WriteLine(value1.Trim().ToLower() == value2.Trim().ToLower());
+
+// Console.WriteLine("a" != "a");
+// Console.WriteLine("a" != "A");
+// Console.WriteLine(1 != 2);
+
+// string myValue = "a";
+// Console.WriteLine(myValue != "a");
+
+string pangram = "The quick brown fox jumps over the lazy dog";
+
+Console.WriteLine(pangram.Contains("fox"));
+Console.WriteLine(pangram.Contains("cow"));
+
+
+/** Control variable scope and logic using code blocks in C# */
+
+bool flag = true;
+if (flag)
+{
+    int x = 5;
+    Console.WriteLine(x);
+}
+
+int[] numbers = { 4, 8, 15, 16, 23, 42 };
+
+int total = 0;
+bool found = false;
+
+foreach (int number in numbers)
+{
+
+    total += number;
+
+    if (number == 42)
+    {
+        found = true;
+    }
+
+}
+
+if (found)
+{
+    Console.WriteLine("Set contains 42");
+}
+
+Console.WriteLine($"Total: {total}");
+
+
+Random random = new Random();
+int current = 0;
+
+do
+{
+    current = random.Next(1, 11);
+    Console.WriteLine(current);
+} while (current != 7);
