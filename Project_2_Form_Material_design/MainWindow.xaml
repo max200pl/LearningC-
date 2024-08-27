@@ -15,15 +15,18 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Let's talk!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+
+                <TextBlock x:Name="dbText"   FontSize="10"   FontWeight="Bold" Margin="0 0 0 20"/>
+                
                 <Grid Margin="0 0 0 30">
-                    <Button HorizontalAlignment="Left" Content="Регистарция"/>
-                    <Button HorizontalAlignment="Right" Content="Войти" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <Button HorizontalAlignment="Left" Content="Registration"/>
+                    <Button HorizontalAlignment="Right" Content="Sign IN" Style="{StaticResource MaterialDesignFlatButton}"/>
                 </Grid>
                 <TextBox x:Name="textboxLogin" materialDesign:HintAssist.Hint="Введите логи" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passBox"  materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 <PasswordBox x:Name="passBoxRepeat"  materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <TextBox x:Name="textboxEmail"  materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <Button Content="Зарегестрироваться"  Margin="0 20" Click="Button_Reg_Click"/>
+                <Button Content="Registration"  Margin="0 20" Click="Button_Reg_Click"/>
             </StackPanel>
         </Border> 
     </Grid>

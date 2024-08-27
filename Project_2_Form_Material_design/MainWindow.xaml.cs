@@ -20,9 +20,25 @@ namespace Project_2_Form_Material_design
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        ApplicationContext db;
         public MainWindow()
         {
             InitializeComponent();
+
+            db = new ApplicationContext();
+
+            List<User> users = db.Users.ToList();
+
+            string str = "";
+
+            foreach (User user in users)
+            {
+                str += "Login" + user.Login + " | ";
+            }
+
+                Console.WriteLine(str);
+            dbText.Text = str;
         }
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
@@ -39,7 +55,7 @@ namespace Project_2_Form_Material_design
             }
             else if (pass.Length < 5)
             {
-                passBox.ToolTip = "Pass must contain more then 5 simbols";
+                passBox.ToolTip = "Pass must contain more then 5 symbols";
                 passBox.Background = Brushes.LightCoral;
             }
             else if (pass != passRepeat)
@@ -63,7 +79,13 @@ namespace Project_2_Form_Material_design
                 textboxEmail.ToolTip = "";
                 textboxEmail.Background = Brushes.LightCyan;
 
-                MessageBox.Show("Login Succssesfull");
+                MessageBox.Show("Login Successful");
+
+                User user = new User(login, email, pass);
+
+                db.Users.Add(user);
+
+                db.SaveChanges();
             }
         }
     }
