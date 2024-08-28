@@ -10,31 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Project_2_Form_Material_design
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AuthWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthWindow : Window
     {
-
-        ApplicationContext db;
-        public MainWindow()
+        public AuthWindow()
         {
             InitializeComponent();
-
-            db = new ApplicationContext();
         }
 
-        private void Button_Reg_Click(object sender, RoutedEventArgs e)
+        private void Button_Auth_Click(object sender, RoutedEventArgs e)
         {
             string login = textboxLogin.Text.Trim();
             string pass = passBox.Password.Trim();
-            string passRepeat = passBoxRepeat.Password.Trim();
-            string email = textboxEmail.Text.Trim().ToLower();
+     
 
             if (login.Length < 5)
             {
@@ -46,34 +40,24 @@ namespace Project_2_Form_Material_design
                 passBox.ToolTip = "Pass must contain more then 5 symbols";
                 passBox.Background = Brushes.LightCoral;
             }
-            else if (pass != passRepeat)
-            {
-                passBox.ToolTip = "Pass must contain the same password";
-                passBox.Background = Brushes.LightCoral;
-            }
-            else if (email.Length < 5 || !email.Contains("@") || !email.Contains("."))
-            {
-                textboxEmail.ToolTip = "Incorrect email";
-                textboxEmail.Background = Brushes.LightCoral;
-            }
             else
             {
                 textboxLogin.ToolTip = "";
                 textboxLogin.Background = Brushes.LightCyan;
                 passBox.ToolTip = "";
                 passBox.Background = Brushes.LightCyan;
-                passBoxRepeat.ToolTip = "";
-                passBoxRepeat.Background = Brushes.LightCyan;
-                textboxEmail.ToolTip = "";
-                textboxEmail.Background = Brushes.LightCyan;
 
-                MessageBox.Show("Login Successful");
+                User authUser = null;
 
-                User user = new User(login, email, pass);
 
-                db.Users.Add(user);
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    authUser = db.Users.Where(b => b.Login == login && b.Pass == pass).FirstOrDefault();
+                }
 
-                db.SaveChanges();
+                if (authUser != null)
+                    MessageBox.Show("Login Successful");
+                else MessageBox.Show("Login Incorrect");
             }
         }
     }
