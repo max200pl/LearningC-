@@ -56,9 +56,21 @@ namespace Project_2_Form_Material_design
                 }
 
                 if (authUser != null)
+                {
                     MessageBox.Show("Login Successful");
+                    UserPageWindow userPageWindow = new UserPageWindow();
+                    userPageWindow.Show();
+                    Hide();
+                }
                 else MessageBox.Show("Login Incorrect");
             }
+        }
+
+        private void Button_Reg_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Hide();
         }
     }
 }

@@ -37,5 +37,10 @@ namespace Project_2_Form_Material_design
             this.email = email;
             this.pass = pass;
         }
+
+        /*public override string ToString()
+        {
+            return "User: " + login + " Email: " + email;
+        }*/
     }
 }

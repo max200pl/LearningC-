@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Project_2_Form_Material_design
 {
@@ -27,6 +28,14 @@ namespace Project_2_Form_Material_design
             InitializeComponent();
 
             db = new ApplicationContext();
+
+            DoubleAnimation btnAnimation = new DoubleAnimation();
+
+            btnAnimation.From = 0;
+            btnAnimation.To = 450;
+            btnAnimation.Duration = TimeSpan.FromSeconds(10);
+            regButton.BeginAnimation(Button.WidthProperty, btnAnimation);
+
         }
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
@@ -74,7 +83,18 @@ namespace Project_2_Form_Material_design
                 db.Users.Add(user);
 
                 db.SaveChanges();
+
+                AuthWindow authWindow = new AuthWindow();
+                authWindow.Show();
+                Hide();
             }
+        }
+
+        private void Button_Windw_Auth_Click(object sender, RoutedEventArgs e)
+        {
+            AuthWindow authWindow = new AuthWindow();
+            authWindow.Show();
+            Hide();
         }
     }
 }
