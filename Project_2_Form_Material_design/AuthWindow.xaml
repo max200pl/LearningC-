@@ -33,13 +33,10 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Let's talk!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-
-
                 <Grid Margin="0 0 0 30">
-                    <Button HorizontalAlignment="Left" Content="Registration"/>
-                    <Button HorizontalAlignment="Right" Content="Sign IN" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <Button HorizontalAlignment="Right" Click="Button_Reg_Click" Content="Registration"/>
                 </Grid>
-                <TextBox x:Name="textboxLogin" materialDesign:HintAssist.Hint="Введите логи" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="textboxLogin" materialDesign:HintAssist.Hint="Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passBox"  materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 <Button Content="Log In" x:Name="authButton"  Margin="0 20" Click="Button_Auth_Click"/>
             </StackPanel>

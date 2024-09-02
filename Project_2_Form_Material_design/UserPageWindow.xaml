@@ -14,7 +14,10 @@
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Cabinet of User"  FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left"  Text="Cabinet of User"  FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                    <Button HorizontalAlignment="Right" Content="Log Out" x:Name="authButton"  Margin="0 20" Click="Button_Auth_Click"/>
+                </Grid>
 
                 <ListView
                     x:Name="listOfUsers"

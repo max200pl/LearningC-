@@ -29,5 +29,12 @@ namespace Project_2_Form_Material_design
 
             listOfUsers.ItemsSource = users;
         }
+
+        private void Button_Auth_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Hide();
+        }
     }
 }
